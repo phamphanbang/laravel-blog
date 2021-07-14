@@ -5,16 +5,39 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">
+                    <h2>{{ __('Latest Post') }}</h2>
+                </div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    @foreach ($data["posts"] as $post )
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <div>
+                                <a href="{{ route('showPost',['title' => $post->title]) }}">{{ $post->title }}</a>
+                                @auth
+                                @if (auth()->user()->role == 'admin' || auth()->user()->id == $post->author_id )
+                                <a href="{{ route('editPost',['id' => $post->id]) }}"
+                                    class="btn btn-secondary float-right">Edit Post</a>
+                                @endif
+                                @endauth
 
-                    {{ __('You are logged in!') }}
+                            </div>
+                            <p><?php 
+                                $create_at = date_create($post->created_at);
+                                $y = date_format($create_at, "M d/Y");
+                                $x = date_format($create_at,"H:i A") ;
+                                echo $y . " at " . $x;
+                                ?> by <a
+                                    href="#">{{ $post->user->name }}</a>
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            {!! $post->body !!}
+                        </div>
+                    </div>
+                    @endforeach
+                    {{ $data["posts"]->links() }}
                 </div>
             </div>
         </div>
