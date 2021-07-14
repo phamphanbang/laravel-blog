@@ -12,4 +12,9 @@ class Post extends Model
     public function user() {
         return $this->belongsTo(User::class,'author_id');
     }
+
+    public function scopeAuthor($query,$arg){
+        
+        return $query->where('author_id',$arg)->orderBy('created_at', 'desc');
+    }
 }
