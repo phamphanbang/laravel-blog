@@ -43,4 +43,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 5eaa663 (Anyone can login/register)
