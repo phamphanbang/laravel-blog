@@ -11,5 +11,6 @@
         'forgotPassword' => 'Quên mật khẩu ?',
         'required' => 'Bạn cần điền vào trường :attribute ',
         'unique' => 'Trường :attribute đã tồn tại '
+
     ]
 ?>

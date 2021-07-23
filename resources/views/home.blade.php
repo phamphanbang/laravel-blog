@@ -38,6 +38,7 @@
                     </div>
                     @endforeach
                     {{ $data["posts"]->links() }}
+
                 </div>
             </div>
         </div>
