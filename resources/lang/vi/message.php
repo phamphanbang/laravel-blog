@@ -8,12 +8,9 @@
         'password' => 'Mật khẩu',
         'confirmPassword' => 'Xác thực mật khẩu',
         'rememberMe' => 'Nhớ mật khẩu',
-<<<<<<< HEAD
-        'forgotPassword' => 'Quên mật khẩu ?'
-=======
         'forgotPassword' => 'Quên mật khẩu ?',
         'required' => 'Bạn cần điền vào trường :attribute ',
         'unique' => 'Trường :attribute đã tồn tại '
->>>>>>> 8cc1e8e (add crud for post)
+
     ]
 ?>

@@ -10,6 +10,7 @@
             <ul class="navbar-nav mr-auto">
             </ul>
             <ul class="navbar-nav ml-auto">
+
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -29,8 +30,6 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
-=======
                             <a class="dropdown-item" href="{{ url('post/create') }}">
                                 {{ __('Add new post') }}
                             </a>
@@ -38,14 +37,10 @@
                                 href="{{ route('indexPost',['id' => auth()->user()->id,'type' => 'public'] ) }}">
                                 {{ __('My Post') }}
                             </a>
-<<<<<<< HEAD
->>>>>>> 8cc1e8e (add crud for post)
-=======
                             <a class="dropdown-item"
                                 href="{{ route('profile',['id' => auth()->user()->id] ) }}">
                                 {{ __('My Profile') }}
                             </a>
->>>>>>> 1820b8c (add i18n and update links)
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

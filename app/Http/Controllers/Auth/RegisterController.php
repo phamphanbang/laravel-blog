@@ -4,14 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 use App\Http\Requests\CreateUserRequest;
->>>>>>> 5eaa663 (Anyone can login/register)
-=======
-use App\Http\Requests\CreateUserRequest;
->>>>>>> 8cc1e8e (add crud for post)
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -56,25 +49,10 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-=======
-=======
->>>>>>> 8cc1e8e (add crud for post)
     { 
         $request = new CreateUserRequest;
         $validate = $request->rules();
         return Validator::make($data, $validate);
-<<<<<<< HEAD
->>>>>>> 5eaa663 (Anyone can login/register)
-=======
->>>>>>> 8cc1e8e (add crud for post)
     }
 
     /**
@@ -85,13 +63,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 5eaa663 (Anyone can login/register)
-=======
->>>>>>> 8cc1e8e (add crud for post)
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
