@@ -17,11 +17,7 @@
 
             <div class="card">
                 <div class="card-header">
-<<<<<<< HEAD
-                    <h3>Edit Post</h3>
-=======
                     <h3>{{ __('Edit Post') }}</h3>
->>>>>>> 8cc1e8e (add crud for post)
                 </div>
 
                 <div class="card-body">
@@ -35,12 +31,8 @@
                                     toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
                                 });
                         </script>
-<<<<<<< HEAD
-                        <form action="{{ asset('/post/update') }}" method="post">
-=======
                         <form action="{{ url('/post/'.$data["post"]->id ) }}" method="post">
                             @method('PUT')
->>>>>>> 8cc1e8e (add crud for post)
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="post_id"
                                 value="{{ old('post_id') ? old('post_id') : $data["post"]->id }}">
@@ -55,11 +47,6 @@
                                 <textarea name='body'
                                     class="form-control">{{ old('body') ? old('body'):$data["post"]->body}}</textarea>
                             </div>
-<<<<<<< HEAD
-                            <input type="submit" name='update' class="btn btn-success" value="Update" />
-                            <input type="submit" name='save' class="btn btn-default" value="Save Draft" />
-                            <a href="{{ route('deletePost',['id' => $data["post"]->id]) }}" class="btn btn-danger">Delete</a>
-=======
                             <input type="submit" name='update' class="btn btn-success" value="{{ __('Update') }}" />
                             <input type="submit" name='save' class="btn btn-default" value="{{ __('Save Draft') }}" />
                             <input type="submit" class="btn btn-danger" value="{{ __('Delete') }}" form="delete"/>
@@ -67,7 +54,6 @@
                         <form action="{{ url('/post/'.$data["post"]->id ) }}" method="post" id="delete">
                             @csrf
                             @method('DELETE')
->>>>>>> 8cc1e8e (add crud for post)
                         </form>
                     </div>
                 </div>

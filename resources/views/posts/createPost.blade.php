@@ -14,11 +14,7 @@
         <div class="col-md-8 col-xl-10">
             <div class="card">
                 <div class="card-header">
-<<<<<<< HEAD
-                    <h3>Add new post</h3>
-=======
                     <h3>{{ __('Add new post') }}</h3>
->>>>>>> 8cc1e8e (add crud for post)
                 </div>
 
                 <div class="card-body">
@@ -32,11 +28,7 @@
                                     toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
                                 });
                         </script>
-<<<<<<< HEAD
-                        <form action="{{ route('createPost') }}" method="post">
-=======
                         <form action="{{ url('/post') }}" method="post">
->>>>>>> 8cc1e8e (add crud for post)
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <input required="required" value="{{ old('title') }}" placeholder="Enter title here"
@@ -45,13 +37,8 @@
                             <div class="form-group">
                                 <textarea name='body' class="form-control">{{ old('body') }}</textarea>
                             </div>
-<<<<<<< HEAD
-                            <input type="submit" name='publish' class="btn btn-success" value="Publish" />
-                            <input type="submit" name='save' class="btn btn-default" value="Save Draft" />
-=======
                             <input type="submit" name='publish' class="btn btn-success" value="{{ __('Publish') }}" />
                             <input type="submit" name='save' class="btn btn-default" value="{{ __('Save Draft') }}" />
->>>>>>> 8cc1e8e (add crud for post)
                         </form>
                     </div>
                 </div>

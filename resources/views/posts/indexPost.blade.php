@@ -17,32 +17,19 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <div>
-<<<<<<< HEAD
-                                <a href="{{ route('showPost',['title' => $post->title]) }}">{{ $post->title }}</a>
-                                @auth
-                                @if (auth()->user()->role == 'admin' || auth()->user()->id == $post->author_id )
-                                <a href="{{ route('editPost',['id' => $post->id]) }}"
-                                    class="btn btn-secondary float-right">Edit Post</a>
-=======
                                 <a href="{{ url('/post/'.$post->id) }}">{{ $post->title }}</a>
                                 @auth
                                 @if (auth()->user()->role == 'admin' || auth()->user()->id == $post->author_id )
                                 <a href="{{ url('/post/'.$post->id.'/edit') }}"
                                     class="btn btn-secondary float-right">{{ __('Edit Post') }}</a>
->>>>>>> 8cc1e8e (add crud for post)
                                 @endif
                                 @endauth </div>
                             <p><?php 
                                 $create_at = date_create($post->created_at);
                                 $y = date_format($create_at, "M d/Y");
                                 $x = date_format($create_at,"H:i A") ;
-<<<<<<< HEAD
-                                echo $y . " at " . $x;
-                                ?> by <a href="{{ route('profile',['id' => $post->author_id]) }}">{{ $post->user->name }}</a></p>
-=======
                                 echo $y . __('at') . $x;
                                 ?> {{ __('by') }} <a href="#">{{ $post->user->name }}</a></p>
->>>>>>> 8cc1e8e (add crud for post)
                         </div>
                         <div class="card-body">
                             {!! $post->body !!}
