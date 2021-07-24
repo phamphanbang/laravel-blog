@@ -6,7 +6,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             </ul>
@@ -38,7 +37,10 @@
                                 href="{{ route('indexPost',['id' => auth()->user()->id,'type' => 'public'] ) }}">
                                 {{ __('My Post') }}
                             </a>
-
+                            <a class="dropdown-item"
+                                href="{{ route('profile',['id' => auth()->user()->id] ) }}">
+                                {{ __('My Profile') }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
