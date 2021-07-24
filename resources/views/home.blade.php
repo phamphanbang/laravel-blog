@@ -21,7 +21,6 @@
                                     class="btn btn-secondary float-right">{{ __('Edit Post') }}</a>
                                 @endif
                                 @endauth
-
                             </div>
                             <p><?php 
                                 $create_at = date_create($post->created_at);

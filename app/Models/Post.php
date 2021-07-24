@@ -16,7 +16,6 @@ class Post extends Model
     public function comments() {
         return $this->hasMany(Comment::class,'on_post');
     }
-    
     public function scopeAuthor($query,$arg){
         
         return $query->where('author_id',$arg)->orderBy('created_at', 'desc');
