@@ -93,9 +93,33 @@
                     </div>
                     <div class="card mt-4">
                         <div class="card-header">
-                            <h3>{{ __('Latest Comments') }}</h3>
+                            <h3>Latest Comments</h3>
                         </div>
-                        
+                        @if ($data["comments_count"] > 0)
+                        @foreach ($data["comments"] as $comment)
+                        <div class="card-body border-bottom">
+                            <div class="card-text">
+                                <p>{{ $comment->body }}</p>
+                                <p>Join on <?php 
+                                    $create_at = date_create($comment->created_at);
+                                    $y = date_format($create_at, "M d/Y");
+                                    $x = date_format($create_at,"H:i A") ;
+                                    echo $y . " at " . $x;
+                                    ?></p>
+                                <p>
+                                    {{ __('On post') }} <a
+                                        href="{{ url('/post/'.$comment->post->id) }}">{{ $comment->post->title }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        @endforeach
+                        @else
+                        <div class="card-body border-bottom">
+                            <div class="card-text pl-4">
+                                {{ __('You dont have any comment yet') }} 
+                            </div>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -20,6 +20,8 @@ class UserController extends Controller
         $data["posts_public_count"] = $data["posts"]->where('public',1)->count();
         $data["posts_draft"] = $data["posts"]->where('public',0);
         $data["posts_draft_count"] = $data["posts_draft"]->count();
+        $data["comments"] = $data["user"]->comments->take(3);
+        $data["comments_count"] = $data["comments"]->count();
         return view('userProfile')->with('data',$data);
     }
 }

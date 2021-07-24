@@ -83,7 +83,8 @@ class PostController extends Controller
 
     public function show(Request $request,$id)
     {
-        $data["post"] = Post::where('id',$id)->first();
+        $data["post"] = Post::find($id);
+        $data["comments"] = Comment::where('on_post',$id)->paginate(2);
         return view('posts.showPost')->with('data', $data);
     }
 }

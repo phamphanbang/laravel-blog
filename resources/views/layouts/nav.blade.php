@@ -10,7 +10,6 @@
             <ul class="navbar-nav mr-auto">
             </ul>
             <ul class="navbar-nav ml-auto">
-
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">

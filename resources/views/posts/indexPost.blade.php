@@ -29,7 +29,7 @@
                                 $y = date_format($create_at, "M d/Y");
                                 $x = date_format($create_at,"H:i A") ;
                                 echo $y . __('at') . $x;
-                                ?> {{ __('by') }} <a href="#">{{ $post->user->name }}</a></p>
+                                ?> {{ __('by') }} <a href="{{ route('profile',['id' => $post->author_id]) }}">{{ $post->user->name }}</a></p>
                         </div>
                         <div class="card-body">
                             {!! $post->body !!}

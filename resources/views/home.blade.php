@@ -21,7 +21,6 @@
                                     class="btn btn-secondary float-right">{{ __('Edit Post') }}</a>
                                 @endif
                                 @endauth
-
                             </div>
                             <p><?php 
                                 $create_at = date_create($post->created_at);
@@ -29,7 +28,7 @@
                                 $x = date_format($create_at,"H:i A") ;
                                 echo $y . __('at') . $x;
                                 ?> {{ __('by') }} <a
-                                    href="#">{{ $post->user->name }}</a>
+                                    href="{{ route('profile',['id' => $post->author_id]) }}">{{ $post->user->name }}</a>
                             </p>
                         </div>
                         <div class="card-body">
@@ -38,7 +37,6 @@
                     </div>
                     @endforeach
                     {{ $data["posts"]->links() }}
-
                 </div>
             </div>
         </div>
