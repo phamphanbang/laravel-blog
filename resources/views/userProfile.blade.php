@@ -58,7 +58,7 @@
 
                         </div>
                         <div class="card-header">
-                            {{ __('Total Comments') }} 0
+                            {{ __('Total Comments') }} {{ $data["comments_count"] }}
                         </div>
                     </div>
                     <div class="card mt-4">
